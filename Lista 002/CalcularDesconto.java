@@ -6,14 +6,20 @@ public class CalcularDesconto {
 
         System.out.println("Digite o valor total da sua compra R$ ");
         float valorDaCompra = scan.nextFloat();
-        scan = new Scanner(System.in);
+        scan.nextLine();
 
         System.out.println("Você se encaixa em qual categoria de cliente? (Novo ou Fidelidade)");
         String tipoCliente = scan.nextLine();
 
+        
        
         if (valorDaCompra > 100 || tipoCliente.equalsIgnoreCase("Fidelidade")) {
-            System.out.println(String.format("Parabéns! Você ganhou um desconto de R$ %.2f" , valorDaCompra * 0.15));
+            float desconto = valorDaCompra * 0.15F;
+            float valorFinal = valorDaCompra - desconto;
+
+            System.out.println(String.format("Parabéns! Você ganhou um desconto de R$ %.2f" , desconto));
+            System.out.println("--------------------------");
+            System.out.println(String.format("O total a pagar é R$ %.2f", valorFinal));
         } 
 
         else {
