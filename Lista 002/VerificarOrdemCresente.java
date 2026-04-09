@@ -13,25 +13,40 @@ public class VerificarOrdemCresente {
         System.out.println("Digite um número: ");
         int num3 = scan.nextInt();
 
-        System.out.println("Os números digitados fora de ordem foram: " + num1 + "-" + num2 + "-" + num3);
-
-        int maiorNumero;
-        int segundoMaior;
-        int terceiroMaior;
-
         if (num1 > num2 && num1 > num3) {
-            maiorNumero = num1;
-        }
-        else if (num2 > num1 && num2 > num3) {
-            segundoMaior = num2;
-        }
-        else {
-            terceiroMaior = num3;
-        }
-        System.out.println("Os números digitados em ordem cresente ficam assim: " + terceiroMaior  + segundoMaior  + maiorNumero);
+            System.out.println("O maior é: " + num1);
 
+            if (num2 > num3) {
+                System.out.println("O segundo maior é " + num2);
+                System.out.println("O terceiro maior é " + num3);
+            } else {
+                System.out.println("O segundo maior é " + num3);
+                System.out.println("O terceiro maior é " + num2);
+            }
 
+        } else if (num2 > num1 && num2 > num3) {
+            System.out.println("O maior é " + num2);
 
+            if (num1 > num3) {
+                System.out.println("O segundo maior é " + num1);
+                System.out.println("O terceiro maior é " + num3);
+            } else {
+                System.out.println("O segundo maior é " + num3);
+                System.out.println("O terceiro maior é " + num1);
+            }
+
+        } else {
+            System.out.println("O maior é " + num3);
+
+            if (num2 > num1) {
+                System.out.println("O segundo maior é " + num2);
+                System.out.println("O terceiro maior é " + num1);
+            } else {
+                System.out.println("O segundo maior é " + num1);
+                System.out.println("O terceiro maior é " + num2);
+            }
+        }
+
+        scan.close();
     }
-    
 }
